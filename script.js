@@ -1,6 +1,7 @@
 const balls = document.getElementsByClassName('ball');
 const guessColor = document.querySelector('#rgb-color');
 const tryAnswer = document.querySelector('#answer');
+const resetBtn = document.querySelector('#reset-game');
 
 function generateRandomColor() {
   const red = Math.floor(Math.random() * 255);
@@ -37,5 +38,12 @@ function activeGameLogic() {
   }
 }
 
+function resetGame() {
+  tryAnswer.innerHTML = 'Escolha uma cor';
+  setBallsColors();
+  activeGameLogic();
+}
+
 window.addEventListener('load', setBallsColors);
 window.addEventListener('load', activeGameLogic);
+resetBtn.addEventListener('click', resetGame);
