@@ -5,21 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
   <title>Adivinhe a Cor</title>
 </head>
 <body>
-
   <header>
     <h1 id="title">Adivinhe a Cor</h1>
   </header>
-
   <main>
-    <section>
-      <p id="rgb-color">(168, 34, 1)</p>
+    <section id="game-info1">
+      <p class="rgb">Código RGB</p>
+      <p class="rgb" id="rgb-color">(168, 34, 1)</p>
       <p id="score"></p>
     </section>
-
-    <section>
+    <section id="display-balls">
       <section class="ball"></section>
       <section class="ball"></section>
       <section class="ball"></section>
@@ -27,14 +28,11 @@
       <section class="ball"></section>
       <section class="ball"></section>
     </section>
-
-    <section>
+    <section id="game-info2">
       <p id="answer">Escolha uma cor</p>
-      <button id="reset-game">Resetar</button>
+      <button id="reset-game">Resetar Jogo</button>
     </section>
-
   </main>
-  
   <script src="script.js"></script>
 </body>
 </html>

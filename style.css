@@ -1,8 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(239, 35, 60);
+  margin: 0 auto;
+  width: 50%;
+}
+
+main {
+  background-color: white;
+}
+
+header {
+  align-items: center;
+  background-color: white;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: center;
+  margin-top: 40px;
+  padding: 30px 0;
+  text-align: center;
+  width: 100%;
+}
+
+#game-info1 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  justify-content: center;
+  margin-bottom: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.rgb {
+  font-size: 1.2em;
+  font-weight: 250;
+}
+
+#score {
+  background-color: rgb(43, 45, 66);
+  border-radius: 10px;
+  color: rgb(237, 242, 244);
+  font-weight: 600;
+  margin-top: 15px;
+  padding: 10px;
+}
+
+#display-balls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
 .ball {
-  width: 70px;
-  height: 70px;
   border-radius: 50%;
-  display: inline-block;
-  border: solid 1px black;
+  cursor: pointer;
+  height: 100px;
   margin-right: 10px;
+  width: 100px;
+}
+
+.ball:hover {
+  opacity: 80%;
+}
+
+#game-info2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  justify-content: center;
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+#answer {
+  background-color: rgb(43, 45, 66);
+  border-radius: 10px;
+  color: rgb(237, 242, 244);
+  font-weight: 600;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+#reset-game {
+  background-color: rgb(237, 242, 244);
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 0.9em;
+  padding: 5px 10px;
+}
+
+#reset-game:hover {
+  background-color: grey;
+  color: rgb(237, 242, 244);
 }

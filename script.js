@@ -37,9 +37,11 @@ function clickBalls(bgColor) {
     balls[i].addEventListener('click', (event) => {
       if (event.target.style.backgroundColor === bgColor) {
         tryAnswer.innerHTML = 'Acertou!';
+        tryAnswer.style.backgroundColor = 'rgb(0, 109, 119)';
         setScoreboardValue(3);
       } else {
         tryAnswer.innerHTML = 'Errou! Tente novamente!';
+        tryAnswer.style.backgroundColor = 'rgb(217, 4, 41)';
         setScoreboardValue(0);
       }
     });
@@ -55,6 +57,7 @@ function activeGame() {
 
 function resetGame() {
   tryAnswer.innerHTML = 'Escolha uma cor';
+  tryAnswer.style.backgroundColor = 'rgb(43, 45, 66)';
   setBallsColors();
   activeGame();
 }
