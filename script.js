@@ -1,14 +1,12 @@
+// Definição das Variáveis;
 const balls = document.getElementsByClassName('ball');
-const guessColor = document.querySelector('#rgb-color');
+const colorGuess = document.querySelector('#rgb-color');
 const tryAnswer = document.querySelector('#answer');
 const resetBtn = document.querySelector('#reset-game');
-let scoreValue = 0;
-const score = document.querySelector('#score');
+const scoreboard = document.querySelector('#score');
+let score = 0;
 
-function setScoreValue() {
-  score.innerHTML = `Placar: ${scoreValue}`;
-}
-
+// Definição das Funções;
 function generateRandomColor() {
   const red = Math.floor(Math.random() * 255);
   const blue = Math.floor(Math.random() * 255);
@@ -29,34 +27,42 @@ function selectRandomBall() {
   return randomBallBgColor;
 }
 
-function clickLogic(x) {
+function setScoreboardValue(value) {
+  score += value;
+  scoreboard.innerHTML = `Placar: ${score}`;
+}
+
+function clickBalls(bgColor) {
   for (let i = 0; i < balls.length; i += 1) {
     balls[i].addEventListener('click', (event) => {
-      if (event.target.style.backgroundColor === x) {
+      if (event.target.style.backgroundColor === bgColor) {
         tryAnswer.innerHTML = 'Acertou!';
-        scoreValue += 3;
-        setScoreValue();
+        setScoreboardValue(3);
       } else {
         tryAnswer.innerHTML = 'Errou! Tente novamente!';
+        setScoreboardValue(0);
       }
     });
   }
 }
 
-function activeGameLogic() {
+function activeGame() {
   const randomBallBgColor = selectRandomBall();
-  const onlyNumbers = randomBallBgColor.replace('rgb', '');
-  guessColor.innerHTML = onlyNumbers;
-  clickLogic(randomBallBgColor);
+  const rgbCode = randomBallBgColor.replace('rgb', '');
+  colorGuess.innerHTML = rgbCode;
+  clickBalls(randomBallBgColor);
 }
 
 function resetGame() {
   tryAnswer.innerHTML = 'Escolha uma cor';
   setBallsColors();
-  activeGameLogic();
+  activeGame();
 }
 
-window.addEventListener('load', setBallsColors);
-window.addEventListener('load', activeGameLogic);
-window.addEventListener('load', setScoreValue);
+// Ativação das Funções;
+window.addEventListener('load', () => {
+  setBallsColors();
+  activeGame();
+  setScoreboardValue(0);
+});
 resetBtn.addEventListener('click', resetGame);
