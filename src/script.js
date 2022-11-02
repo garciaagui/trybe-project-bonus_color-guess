@@ -32,7 +32,7 @@ function selectRandomBall() {
 function setScoreboardValue(value, action) {
   if (action === 'reset') score = value;
   else score += value;
-  scoreboard.innerHTML = `Placar: ${score}`;
+  scoreboard.innerHTML = `🌟 Placar: ${score}`;
 }
 
 function activeGame() {
