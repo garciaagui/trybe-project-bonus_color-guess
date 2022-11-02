@@ -54,6 +54,7 @@ header {
   color: rgb(237, 242, 244);
   font-size: 1.3em;
   font-weight: 1000;
+  margin: 0;
   padding: 10px 15px;
   text-align: center;
 }
@@ -62,19 +63,22 @@ header {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 50px;
+  justify-content: space-evenly;
+  margin: 50px 0 50px;
+  width: 75%;
 }
 
 .ball {
   border-radius: 50%;
   cursor: pointer;
   height: 100px;
-  margin-right: 10px;
+  opacity: 100%;
+  transition: 0.3s;
   width: 100px;
 }
 
 .ball:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   opacity: 80%;
 }
 
