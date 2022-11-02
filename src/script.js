@@ -4,6 +4,8 @@ const colorGuess = document.querySelector('#rgb-color');
 const tryAnswer = document.querySelector('#answer');
 const resetBtn = document.querySelector('#reset-game');
 const scoreboard = document.querySelector('#score');
+let randomBallBgColor;
+let rgbCode;
 let score = 0;
 
 // Definição das Funções;
@@ -32,27 +34,10 @@ function setScoreboardValue(value) {
   scoreboard.innerHTML = `Placar: ${score}`;
 }
 
-function clickBalls(bgColor) {
-  for (let i = 0; i < balls.length; i += 1) {
-    balls[i].addEventListener('click', (event) => {
-      if (event.target.style.backgroundColor === bgColor) {
-        tryAnswer.innerHTML = 'Acertou!';
-        tryAnswer.style.backgroundColor = 'rgb(0, 109, 119)';
-        setScoreboardValue(3);
-      } else {
-        tryAnswer.innerHTML = 'Errou! Tente novamente!';
-        tryAnswer.style.backgroundColor = 'rgb(217, 4, 41)';
-        setScoreboardValue(0);
-      }
-    });
-  }
-}
-
 function activeGame() {
-  const randomBallBgColor = selectRandomBall();
-  const rgbCode = randomBallBgColor.replace('rgb', '');
+  randomBallBgColor = selectRandomBall();
+  rgbCode = randomBallBgColor.replace('rgb', '');
   colorGuess.innerHTML = rgbCode;
-  clickBalls(randomBallBgColor);
 }
 
 function resetGame() {
@@ -68,4 +53,21 @@ window.addEventListener('load', () => {
   activeGame();
   setScoreboardValue(0);
 });
+
 resetBtn.addEventListener('click', resetGame);
+
+for (let i = 0; i < balls.length; i += 1) {
+  balls[i].addEventListener('click', (event) => {
+    if (event.target.style.backgroundColor === randomBallBgColor) {
+      tryAnswer.innerHTML = 'Acertou!';
+      tryAnswer.style.backgroundColor = 'rgb(0, 109, 119)';
+      setScoreboardValue(3);
+    } else {
+      tryAnswer.innerHTML = 'Errou! Tente novamente!';
+      tryAnswer.style.backgroundColor = 'rgb(217, 4, 41)';
+      setScoreboardValue(0);
+    }
+    setBallsColors();
+    activeGame();
+  });
+}
