@@ -16,6 +16,7 @@ main {
   background-color: white;
   display: flex;
   flex-direction: column;
+  padding-bottom: 30px;
 }
 
 header {
@@ -82,34 +83,15 @@ header {
   opacity: 80%;
 }
 
-#game-info2 {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.5em;
-  justify-content: center;
-  padding-bottom: 30px;
-  width: 100%;
-}
-
 #answer {
   background-color: rgb(43, 45, 66);
-  border-radius: 10px;
   color: rgb(237, 242, 244);
+  font-size: 1.3em;
   font-weight: 600;
-  margin-bottom: 15px;
-  padding: 10px;
+  margin-bottom: 25px;
+  padding: 10px 15px;
 }
 
 #reset-game {
-  background-color: rgb(237, 242, 244);
-  cursor: pointer;
-  border-radius: 10px;
-  font-size: 0.9em;
-  padding: 5px 10px;
-}
-
-#reset-game:hover {
-  background-color: grey;
-  color: rgb(237, 242, 244);
+  font-weight: 1000;
 }

@@ -61,11 +61,11 @@ resetBtn.addEventListener('click', resetGame);
 for (let i = 0; i < balls.length; i += 1) {
   balls[i].addEventListener('click', (event) => {
     if (event.target.style.backgroundColor === randomBallBgColor) {
-      tryAnswer.innerHTML = 'Acertou!';
-      tryAnswer.style.backgroundColor = 'rgb(0, 109, 119)';
+      tryAnswer.innerHTML = 'Acertou! 😁';
+      tryAnswer.style.backgroundColor = 'rgb(56, 140, 196)';
       setScoreboardValue(3, 'add');
     } else {
-      tryAnswer.innerHTML = 'Errou! Tente novamente!';
+      tryAnswer.innerHTML = 'Errou! 😭 Tente novamente!';
       tryAnswer.style.backgroundColor = 'rgb(217, 4, 41)';
       setScoreboardValue(0, 'add');
     }
