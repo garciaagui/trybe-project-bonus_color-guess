@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&family=Roboto:wght@300;400;900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500&family=Roboto:wght@300;400;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
   <title>Adivinhe a Cor</title>
 </head>
+
 <body>
   <header>
-    <h1 id="title">Adivinhe a Cor</h1>
+    <h1 id="title">Color Guess Game 🤔</h1>
   </header>
   <main>
-    <section id="game-info1">
-      <p class="rgb">Código RGB</p>
-      <p class="rgb" id="rgb-color">(168, 34, 1)</p>
-      <p id="score"></p>
+    <section id="game-instructions">
+      <p>ℹ️ Tente adivinhar qual círculo possui o código RGB abaixo:</p>
+      <p id="rgb-color">(168, 34, 1)</p>
     </section>
+    <p id="score"></p>
     <section id="display-balls">
       <section class="ball"></section>
       <section class="ball"></section>
@@ -28,11 +34,10 @@
       <section class="ball"></section>
       <section class="ball"></section>
     </section>
-    <section id="game-info2">
-      <p id="answer">Escolha uma cor</p>
-      <button id="reset-game">Resetar Jogo</button>
-    </section>
+    <p id="answer">Escolha uma cor</p>
+    <button id="reset-game" class="btn btn-warning">Resetar Jogo</button>
   </main>
   <script src="script.js"></script>
 </body>
+
 </html>

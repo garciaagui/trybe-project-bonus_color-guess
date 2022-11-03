@@ -20,7 +20,7 @@ Projeto **bônus** do curso de Desenvolvimento Web da [Trybe](https://www.betryb
 
 Este projeto se trata da criação de um jogo de adivinhação de cores. A pessoa usuária deverá tentar adivinhar qual cor foi aleatoriamente selecionada como a correta na paleta de cores.
 
-![Project Color Guess][project-gif]
+![Project Color Guess][project-demo]
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
@@ -34,6 +34,7 @@ Este projeto se trata da criação de um jogo de adivinhação de cores. A pesso
   <li>Integração de HTML5, CSS3 e JavaScript para criação de uma aplicação.</li>
   <li>Manipulação de elementos HTML5 com JavaScript através dos seletores do DOM (Document Object Model).</li>
   <li>Utilização de eventos do JavaScript para executar funções de acordo com as interações da pessoa usuária.</li>
+  <li>Aplicação do framework Bootstrap.</li>
 </ul>
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
@@ -41,9 +42,9 @@ Este projeto se trata da criação de um jogo de adivinhação de cores. A pesso
 ## Funcionalidades
 <ul>
   <li>A pessoa usuária deve clicar em um dos círculos para tentar adivinhar se a cor do círculo está correta.</li>
-  <li>A cada tentativa, aparecerá uma mensagem de texto informando se a pessoa usuária acertou ou não.</li>
-  <li>A cada acerto, soma-se três pontos no placar disposto na tela.</li>
-  <li>É possível reiniciar o jogo, alterando a paleta de cores.</li>
+  <li>A cada tentativa, aparecerá uma mensagem de texto informando se a pessoa usuária acertou ou não e uma nova paleta de cores é gerada.</li>
+  <li>A cada acerto, soma-se três pontos no placar disposto na tela. Em caso de erro, o placar não é alterado.</li>
+  <li>É possível reiniciar o jogo, zerando o placar e gerando uma nova paleta de cores.</li>
 </ul>
 
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
@@ -74,7 +75,7 @@ Guilherme Garcia - garciaguig@gmail.com
 <p align="right"><a href="#readme-top">Voltar ao topo</a></p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[project-gif]: /project-gif.gif
+[project-demo]: /project-demo.gif
 [html5-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [html5-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [css3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS

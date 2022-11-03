@@ -4,6 +4,8 @@ const colorGuess = document.querySelector('#rgb-color');
 const tryAnswer = document.querySelector('#answer');
 const resetBtn = document.querySelector('#reset-game');
 const scoreboard = document.querySelector('#score');
+let randomBallBgColor;
+let rgbCode;
 let score = 0;
 
 // Definição das Funções;
@@ -27,37 +29,22 @@ function selectRandomBall() {
   return randomBallBgColor;
 }
 
-function setScoreboardValue(value) {
-  score += value;
-  scoreboard.innerHTML = `Placar: ${score}`;
-}
-
-function clickBalls(bgColor) {
-  for (let i = 0; i < balls.length; i += 1) {
-    balls[i].addEventListener('click', (event) => {
-      if (event.target.style.backgroundColor === bgColor) {
-        tryAnswer.innerHTML = 'Acertou!';
-        tryAnswer.style.backgroundColor = 'rgb(0, 109, 119)';
-        setScoreboardValue(3);
-      } else {
-        tryAnswer.innerHTML = 'Errou! Tente novamente!';
-        tryAnswer.style.backgroundColor = 'rgb(217, 4, 41)';
-        setScoreboardValue(0);
-      }
-    });
-  }
+function setScoreboardValue(value, action) {
+  if (action === 'reset') score = value;
+  else score += value;
+  scoreboard.innerHTML = `🌟 Placar: ${score}`;
 }
 
 function activeGame() {
-  const randomBallBgColor = selectRandomBall();
-  const rgbCode = randomBallBgColor.replace('rgb', '');
+  randomBallBgColor = selectRandomBall();
+  rgbCode = randomBallBgColor.replace('rgb', '');
   colorGuess.innerHTML = rgbCode;
-  clickBalls(randomBallBgColor);
 }
 
 function resetGame() {
   tryAnswer.innerHTML = 'Escolha uma cor';
   tryAnswer.style.backgroundColor = 'rgb(43, 45, 66)';
+  setScoreboardValue(0, 'reset');
   setBallsColors();
   activeGame();
 }
@@ -66,6 +53,23 @@ function resetGame() {
 window.addEventListener('load', () => {
   setBallsColors();
   activeGame();
-  setScoreboardValue(0);
+  setScoreboardValue(0, 'reset');
 });
+
 resetBtn.addEventListener('click', resetGame);
+
+for (let i = 0; i < balls.length; i += 1) {
+  balls[i].addEventListener('click', (event) => {
+    if (event.target.style.backgroundColor === randomBallBgColor) {
+      tryAnswer.innerHTML = 'Acertou! 😁';
+      tryAnswer.style.backgroundColor = 'rgb(56, 140, 196)';
+      setScoreboardValue(3, 'add');
+    } else {
+      tryAnswer.innerHTML = 'Errou! 😭 Tente novamente!';
+      tryAnswer.style.backgroundColor = 'rgb(217, 4, 41)';
+      setScoreboardValue(0, 'add');
+    }
+    setBallsColors();
+    activeGame();
+  });
+}
